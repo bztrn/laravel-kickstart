@@ -1,0 +1,38 @@
+SET NAMES utf8;
+
+DROP DATABASE IF EXISTS database;
+CREATE DATABASE database CHARACTER SET utf8;
+GRANT SELECT, UPDATE, INSERT, DELETE, LOCK TABLES ON database.* TO 'database'@'localhost' IDENTIFIED BY 'database !';
+USE database;
+
+/*
+DROP DATABASE database;
+DROP USER 'database'@'localhost';
+FLUSH PRIVILEGES;
+*/
+
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS roles;
+
+CREATE TABLE roles (
+    id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
+    label VARCHAR(50) NOT NULL,
+
+    PRIMARY KEY (id),
+    UNIQUE INDEX (label)
+)
+ENGINE=InnoDB;
+
+CREATE TABLE users (
+    id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+    created_at DATETIME NOT NULL,
+    updated_at DATETIME NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    role_id INTEGER UNSIGNED NOT NULL,
+
+    PRIMARY KEY (id),
+    FOREIGN KEY (role_id) REFERENCES roles (id)
+)
+ENGINE=InnoDB;

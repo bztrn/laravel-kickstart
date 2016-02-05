@@ -1,0 +1,15 @@
+{
+  "name": "laravel-kickstart",
+  "authors": [
+    "Olivier Coilland <olivier@coilland.fr>"
+  ],
+  "description": "My Laravel project skeleton",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3",
+    "chosen": "^1",
+    "jquery": "^2",
+    "jquery-ui": "^1"
+  }
+}
