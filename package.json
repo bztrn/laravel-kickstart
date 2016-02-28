@@ -1,0 +1,10 @@
+{
+  "name": "laravel-kickstart",
+  "version": "0.0.0",
+  "description": "My Laravel project skeleton.",
+  "dependencies": {
+    "bootstrap": "^3",
+    "jquery": "^2",
+    "jquery-ui": "^1"
+  }
+}
